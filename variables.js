@@ -18,18 +18,19 @@ const cityInput = document.querySelector(".cityInput");
 
 const locationDiv = document.querySelector(".location");
 const cityChangeDiv = document.querySelector(".cityChangeDiv");
-//const detailsText = document.querySelector(".details");
+
 
 const weeklyForecastDiv = document.querySelector(".weekly-forecast");
 const hourlyForecastDiv = document.querySelector(".hourly-forecast");
 // city name
-let defaultCityName = "Baku";
+let defaultCityName = JSON.parse(localStorage.getItem("cityName")) || "Baku";
+let defaultCountrtyName = JSON.parse(localStorage.getItem("countryName")) || "Azerbaijan";
 // coordinates for weather forecast
-let lat = cityList[0].lat;
-let long = cityList[0].long;
-// api url
-// let dailyAPI = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=temperature_2m_max&timezone=auto&daily=weather_code&daily=apparent_temperature_max`;
-// let hourlyAPI = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&hourly=wind_speed_10m&hourly=weather_code&timezone=auto&hourly=apparent_temperature&forecast_days=1`;
+let lat =JSON.parse(localStorage.getItem("lat")) || cityList[0].lat;
+let long =JSON.parse(localStorage.getItem("long")) || cityList[0].long;
 
 
 let dailyAPI, hourlyAPI
+
+// api for finding coordinate with ip(Will be added soon)
+//  https://api.bigdatacloud.net/data/reverse-geocode-client

@@ -172,11 +172,6 @@ function renderHourlyForecast(data) {
   } km/h`;
 }
 
-// function onPageLoad() {
-//   getHourlyForecast();
-//   getDailyForecast();
-// }
-
 function renderCityList() {
   citiesListDiv.innerHTML = "";
   cityList.forEach((city) => {
@@ -201,6 +196,10 @@ function setCity(latCoordinate, longCoordinate, cityParam, countryParam) {
   hourlyAPI = hourlyAPI;
   updateApi(lat, long, cityParam, countryParam);
   hideCityChange();
+  localStorage.setItem("lat", JSON.stringify(lat));
+  localStorage.setItem("long", JSON.stringify(long));
+  localStorage.setItem("cityName", JSON.stringify(cityParam));
+  localStorage.setItem("country", JSON.stringify(countryParam));
 }
 
 function updateApi(latitude, longtitude, city, country) {
@@ -229,14 +228,7 @@ cityInput.addEventListener("input", (event) => {
 });
 
 locationDiv.addEventListener("click", () => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition((position) => {
-  //       lat = position.coords.latitude;
-  //       long = position.coords.longitude;
-  //       getHourlyForecast();
-  //       getDailyForecast();
-  //     });
-  //   }
+ 
 
   renderCityList();
 
@@ -247,4 +239,15 @@ closeTabIcon.addEventListener("click", () => {
   hideCityChange();
 });
 
-updateApi(lat, long, "Baku", "Azerbaijan");
+updateApi(lat, long, defaultCityName, defaultCountrtyName);
+
+
+// will be added soon
+ //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition((position) => {
+  //       lat = position.coords.latitude;
+  //       long = position.coords.longitude;
+  //       getHourlyForecast();
+  //       getDailyForecast();
+  //     });
+  //   }
