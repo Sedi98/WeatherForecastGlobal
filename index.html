@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <div class="locDateDiv">
+          <div class="location">
+            <p class="locationCityNameText">Baku</p>
+
+            <span class="changeLocationIcon"
+              ><i class="bx bxs-edit-location"></i
+            ></span>
+          </div>
+          <div class="date">21.04.2021</div>
+        </div>
+        <div class="dailyTempsDiv">
+          <h1 class="main-temp">20°</h1>
+          <div class="dailyApparentTempText detail">Feels like 19°</div>
+        </div>
+
+        <div class="weather-condition">Cloudy</div>
+        <div class="details">
+          <div class="detail "><span><i class='bx bx-wind' ></i></span> <span class="windSpeedText"></span></div>
+        </div>
+        <div class="weekly-forecast">
+          <div class="day">
+            <span class="weekDayText">Today</span>
+            <span class="temp">20°</span> <span class="weatherType">Mist</span>
+          </div>
+          <div class="day">
+            <span class="weekDayText">Tue</span> <span class="temp">32°</span>
+            <span class="weatherType">Sunny</span>
+          </div>
+          <div class="day">
+            <span class="weekDayText">Wed</span> <span class="temp">12°</span>
+            <span class="weatherType">Rainy</span>
+          </div>
+          <div class="day">
+            <span class="weekDayText">Thu</span> <span class="temp">13°</span>
+            <span class="weatherType">Rainy</span>
+          </div>
+          <div class="day">
+            <span class="weekDayText">Fri</span> <span class="temp">22°</span>
+            <span class="weatherType">Mist</span>
+          </div>
+          <div class="day">
+            <span class="weekDayText">Sat</span> <span class="temp">22°</span>
+            <span class="weatherType">Mist</span>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="greeting">Good Morning</div>
+        <div class="time">12:27 PM</div>
+        <div class="side-temp">
+          <div class="hourlyTempText">20°</div>
+          <div class="details">
+            <div class="detail"><span><i class='bx bx-wind' ></i></span> <span class="hourlywindSpeedText"></span></div>
+            <div class="detail appearentTempText">Feels like 19°</div>
+            <div class="detail">Cloudy</div>
+          </div>
+        </div>
+        <div class="hourly-forecast">
+          <div class="hour">
+            1 PM <span class="temp">20°</span>
+            <span class="weatherType">Cloudy</span>
+          </div>
+          <div class="hour">
+            2 PM <span class="temp">21°</span>
+            <span class="weatherType">Rainy</span>
+          </div>
+          <div class="hour">
+            3 PM <span class="temp">21°</span>
+            <span class="weatherType">Rainy</span>
+          </div>
+          <div class="hour">
+            4 PM <span class="temp">20°</span>
+            <span class="weatherType">Cloudy</span>
+          </div>
+          <div class="hour">
+            5 PM <span class="temp">21°</span>
+            <span class="weatherType">Rainy</span>
+          </div>
+          <div class="hour">
+            6 PM <span class="temp">21°</span>
+            <span class="weatherType">Rainy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cityChangeDiv">
+      <div style="display: flex; justify-content: space-between">
+        <p>Choose Your City</p>
+        <div class="closeTabIcon">
+          <i class="bx bx-x-circle"></i>
+        </div>
+      </div>
+
+      <input class="cityInput" type="text" placeholder="Enter City" />
+      <div class="citiesList"></div>
+    </div>
+    <script src="./citiesList.js"></script>
+    <script src="./variables.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

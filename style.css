@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  /* display: none; */
+  background-color: #aeaeae;
+  border-radius: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #696969;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 90%;
+  height: 90vh;
+}
+
+.left-panel,
+.right-panel {
+  padding: 20px;
+}
+
+.left-panel {
+  background-color: #f9f9f9;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f6f6f6;
+  height: 100%;
+}
+
+.locDateDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location,
+.date,
+.greeting,
+.time {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.main-temp {
+  font-size: 10rem;
+  font-weight: 500;
+  text-align: center;
+  color: #696969;
+  margin: 5px;
+}
+
+.weather-condition,
+.detail {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #696969;
+  text-align: center;
+  font-weight: 400;
+}
+
+.weather-condition {
+  text-align: center;
+  font-size: 32px !important;
+  font-weight: 500;
+  color: #696969;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.weekly-forecast,
+.hourly-forecast {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.hourly-forecast {
+  overflow-y: auto;
+  height: calc(100% / 2);
+}
+
+.weatherType {
+  color: #aeaeae;
+}
+
+.day,
+.hour {
+  display: flex;
+  flex-direction: column;
+
+  margin: 5px 0;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  gap: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+.day {
+  width: calc(100% / 8) ;
+}
+
+.hour {
+  border-radius: 15px;
+  width: calc(100% / 4);
+}
+
+.weekDayText {
+  font-size: 1rem;
+  color: black;
+}
+
+.side-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.side-temp > div {
+  font-size: 3rem;
+  font-weight: 500;
+  width: 100%;
+  color: #696969;
+}
+
+.details {
+  width: 100%;
+  font-weight: 400;
+}
+
+.hour span {
+  margin-left: 5px;
+}
+
+.temp {
+  color: #696969;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.changeLocationIcon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+p {
+  margin: 0;
+}
+
+.cityChangeDiv {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  width: 50%;
+  height: 50vh;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  font-weight: 500;
+  z-index: 10;
+  position: absolute;
+}
+
+.cityInput {
+  display: block;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  padding: 0 20px;
+  font-size: 16px;
+  width: calc(100% - 40px);
+}
+
+.location {
+  cursor: pointer;
+}
+
+.closeTabIcon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.city {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.citiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 20px;
+  border-radius: 25px;
+  overflow-y: auto;
+  height: calc(100% - 120px);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    border-radius: 0px;
+  }
+  .locDateDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weekly-forecast {
+    flex-wrap: wrap;
+    width: 100%;
+    
+  }
+  .day {
+   flex-grow: 1;
+   width: calc(100% / 3);
+  }
+
+
+  .cityChangeDiv {
+    width: 90%;
+  }
+}
+
+
